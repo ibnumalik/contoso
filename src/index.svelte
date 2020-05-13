@@ -5,14 +5,25 @@
   import {user} from './stores';
 
   const members = ['associate', 'platinum', 'diamond'];
-  let userMember = '';
+  let userMember;
+  let cartVisible = false;
 
   function register(selected) {
     user.update(user => selected);
   }
 
   user.subscribe(user => userMember = user)
+
+  function toggleCart() {
+    cartVisible = !cartVisible
+  }
 </script>
+
+<style>
+  .w-200 {
+    width: 200px;
+  }
+</style>
 
 <div class="container mx-auto">
   <header class="py-4 mb-20 flex justify-between">
@@ -20,7 +31,14 @@
       <h1 class="uppercase font-bold">Contoso</h1>
     </a>
 
-    <button>Cart</button>
+    <div class="relative">
+      <button on:click={toggleCart}>Cart</button>
+      {#if cartVisible}
+      <div class="modalCart absolute shadow-lg right-0 w-200 p-3 bg-white">
+        Empty cart
+      </div>
+      {/if}
+    </div>
   </header>
 
   <section class="mb-20 members">
@@ -41,7 +59,6 @@
     </ul>
   </section>
 
-  {#if userMember}
 
   <section class="mb-20">
     <Products />
@@ -51,5 +68,4 @@
     <Cart />
   </section>
 
-  {/if}
 </div>
