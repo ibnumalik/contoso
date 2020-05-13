@@ -1,3 +1,5 @@
+import { Product } from 'src/types/Product';
+
 export function combineCartProducts(products: any[]) {
   return products.reduce((acc: any[], curr: any) => {
     const index = acc.findIndex((ac) => ac.name === curr.name);
@@ -28,6 +30,6 @@ export function combineCartProducts(products: any[]) {
   }, []);
 }
 
-export function getPriceTotal(products: any[]) {
+export function getPriceTotal(products: Product[]) {
   return products.reduce((acc, curr) => acc + curr.price, 0);
 }
