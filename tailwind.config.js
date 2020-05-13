@@ -1,11 +1,13 @@
 module.exports = {
-  purge: [
-    './src/**/*.svelte',
-    './src/**/*.html'
-  ],
+  // purge: [
+  //   './src/**/*.svelte',
+  //   './src/**/*.html'
+  // ],
   theme: {
     extend: {},
   },
-  variants: {},
+  variants: {
+    padding: ['responsive', 'hover', 'focus', 'first', 'last'],
+  },
   plugins: [],
-}
+};
