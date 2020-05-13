@@ -2,14 +2,15 @@
   import tailwind from './tailwind.svelte';
   import Products from './components/products.svelte';
   import Cart from './components/cart.svelte';
-  import {user} from './stores';
+  import {user, cart} from './stores';
 
   const members = ['associate', 'platinum', 'diamond'];
   let userMember;
   let cartVisible = false;
 
-  function register(selected) {
+  function updateUser(selected) {
     user.update(user => selected);
+    cart.update(products => [])
   }
 
   user.subscribe(user => userMember = user)
@@ -50,7 +51,7 @@
 
         <button
           class="{member === userMember ? 'bg-indigo-600' : ''} rounded bg-blue-600 px-4 py-6 uppercase font-bold text-center text-blue-200 w-full hover:bg-blue-700"
-          on:click={() => register(member)}
+          on:click={() => updateUser(member)}
         >
           {member}
         </button>
