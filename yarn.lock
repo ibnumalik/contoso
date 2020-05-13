@@ -2586,7 +2586,7 @@ postcss-js@^2.0.0:
     camelcase-css "^2.0.1"
     postcss "^7.0.18"
 
-postcss-load-config@^2.0.0:
+postcss-load-config@^2.0.0, postcss-load-config@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/postcss-load-config/-/postcss-load-config-2.1.0.tgz#c84d692b7bb7b41ddced94ee62e8ab31b417b003"
   integrity sha512-4pV3JJVPLd5+RueiVVB+gFOAa7GWc25XQcMp86Zexzke69mKf6Nx9LRcQywdz7yZI9n1udOxmLuAwTBypypF8Q==
@@ -2908,7 +2908,7 @@ postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.5:
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-postcss@^7.0.11, postcss@^7.0.18, postcss@^7.0.21, postcss@^7.0.27:
+postcss@^7.0.11, postcss@^7.0.18, postcss@^7.0.21, postcss@^7.0.27, postcss@^7.0.30:
   version "7.0.30"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.30.tgz#cc9378beffe46a02cbc4506a0477d05fcea9a8e2"
   integrity sha512-nu/0m+NtIzoubO+xdAlwZl/u5S5vi/y6BCsoL8D+8IxsD3XvBS8X4YEADNIVXKVuQvduiucnRv+vPIqj56EGMQ==

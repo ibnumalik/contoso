@@ -8,6 +8,8 @@
     "build": "rm -rf ./dist && NODE_ENV=production rollup --config"
   },
   "dependencies": {
+    "postcss": "^7.0.30",
+    "postcss-load-config": "^2.1.0",
     "svelte": "^3.20.1",
     "tailwindcss": "^1.4.6"
   },
