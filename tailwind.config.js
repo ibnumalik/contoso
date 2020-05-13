@@ -8,6 +8,7 @@ module.exports = {
   },
   variants: {
     padding: ['responsive', 'hover', 'focus', 'first', 'last'],
+    borderWidth: ['responsive', 'hover', 'focus', 'first', 'last'],
   },
   plugins: [],
 };

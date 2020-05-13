@@ -1,6 +1,7 @@
 <script lang="ts">
   import tailwind from './tailwind.svelte';
   import Products from './components/products.svelte';
+  import Cart from './components/cart.svelte';
   import {user} from './stores';
 
   const members = ['associate', 'platinum', 'diamond'];
@@ -40,7 +41,15 @@
     </ul>
   </section>
 
+  {#if userMember}
+
   <section class="mb-20">
     <Products />
   </section>
+
+  <section class="mb-20">
+    <Cart />
+  </section>
+
+  {/if}
 </div>

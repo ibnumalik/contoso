@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { cart } from '../stores';
+
   const products = [
     { name: 'Kone', price: 3488.99 },
     { name: 'Ironhide', price: 3299.99 },
@@ -7,6 +9,10 @@
     { name: 'Shimano + Derailuer', price: 67.6 },
     { name: 'SANTA CRUZ', price: 185.5 },
   ];
+
+  function addToCart(product) {
+    cart.update((products) => [...products, product]);
+  }
 </script>
 
 <h2 class="text-2xl mb-8">Products</h2>
@@ -24,10 +30,13 @@
 
         <footer class="text p-4 border-t flex justify-between items-center">
           <div class="price">
-            RM {product.price}
+            RM {product.price.toFixed(2)}
           </div>
 
-          <button class="uppercase text-sm rounded hover:bg-gray-300 px-4 py-2">
+          <button
+            class="uppercase text-sm rounded hover:bg-gray-300 px-4 py-2"
+            on:click="{() => addToCart(product)}"
+          >
             Add to cart
           </button>
         </footer>
