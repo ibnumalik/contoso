@@ -66,7 +66,7 @@
   </section>
 
   <section class="mb-20">
-    <Cart />
+    <Cart user={userMember}/>
   </section>
 
 </div>
