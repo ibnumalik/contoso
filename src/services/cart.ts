@@ -1,7 +1,7 @@
-import { Product } from 'src/types/Product';
+import { Product, CartProduct } from 'src/types/Product';
 
-export function combineCartProducts(products: any[]) {
-  return products.reduce((acc: any[], curr: any) => {
+export function combineCartProducts(products: Product[]) {
+  return products.reduce((acc: CartProduct[], curr: Product) => {
     const index = acc.findIndex((ac) => ac.name === curr.name);
 
     if (index === -1) {
@@ -30,6 +30,6 @@ export function combineCartProducts(products: any[]) {
   }, []);
 }
 
-export function getPriceTotal(products: Product[]) {
-  return products.reduce((acc, curr) => acc + curr.price, 0);
+export function getPriceTotal(products: CartProduct[]) {
+  return products.reduce((acc, curr) => acc + curr.total, 0);
 }
