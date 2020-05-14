@@ -32,18 +32,7 @@ export function cartTotal(products: Product[]): CartProduct[] {
     total: rounder(product.total * (1 - generalDiscount)),
   }));
 
-  const total = [...others];
-  if (kone) {
-    total.push(kone);
-  }
-  if (ironhide) {
-    total.push(ironhide);
-  }
-  if (ironhideCartridge) {
-    total.push(ironhideCartridge);
-  }
-
-  return total;
+  return [...others, kone, ironhide, ironhideCartridge].filter(Boolean);
 }
 
 function calculateKonePrice(products: Product[]): CartProduct {
