@@ -1,6 +1,7 @@
 import { Product, CartProduct } from 'src/types/Product';
 import { UserType } from 'src/types/User';
 import { cartTotal } from './associate';
+import { rounder } from './rounder';
 
 export function combineCartProducts(products: Product[], userType: UserType) {
   switch (userType) {
@@ -19,7 +20,7 @@ export function combineCartProducts(products: Product[], userType: UserType) {
 }
 
 export function getPriceTotal(products: CartProduct[]) {
-  return products.reduce((acc, curr) => acc + curr.total, 0);
+  return rounder(products.reduce((acc, curr) => acc + curr.total, 0));
 }
 
 export function totalize(products: Product[]) {
