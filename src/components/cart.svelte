@@ -3,14 +3,16 @@
   import { combineCartProducts, getPriceTotal } from '../services/cart';
 
   export let user;
-  let productList;
+  let productList = [];
   let total = 0;
   let test;
 
   cart.subscribe((products) => {
-    productList = combineCartProducts(products);
-    total = getPriceTotal(productList);
-    test = JSON.stringify(products, null, 4);
+    if (products.length > 0) {
+      productList = combineCartProducts(products, user);
+      total = getPriceTotal(productList);
+      test = JSON.stringify(products, null, 4);
+    }
   });
 </script>
 
