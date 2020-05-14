@@ -1,7 +1,6 @@
-# Svelte + Typescript + Rollup
+# Contoso
 
-Minimal boilerplate example of Svelte with Typescript using Rollup.
-This also includes SCSS support
+Assessment for Amway.
 
 Install packages
 ```bash
@@ -16,4 +15,9 @@ $ yarn serve
 Build for production
 ```bash
 $ yarn build
+```
+
+Run test
+```bash
+$ yarn test
 ```
