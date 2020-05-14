@@ -12,6 +12,18 @@
     total = getPriceTotal(productList);
     test = JSON.stringify(products, null, 4);
   });
+
+  function addProduct(product) {
+    cart.update((products) => [...products, product]);
+  }
+  function removeProduct(product) {
+    cart.update((products) => {
+      const index = products.findIndex(prev => prev.name === product.name)
+      products.splice(index, 1);
+
+      return products;
+    });
+  }
 </script>
 
 <header class="mb-8 flex items-center relative">
@@ -36,9 +48,28 @@
     >
       <p>{product.name}</p>
 
-      <div class="flex">
-        <p class="mr-4">Total: {product.qty}</p>
-        <p>RM{product.total.toFixed(2)}</p>
+      <div class="flex items-center">
+        <p class="mr-4">RM{product.total.toFixed(2)}</p>
+
+        <div class="flex">
+          <button
+            class="bg-gray-300 border border-gray-400 h-8 rounded-bl rounded-tl w-8"
+            on:click={() => removeProduct(product)}
+          >
+            -
+          </button>
+          <span
+            class="bg-gray-100 border-t border-b border-gray-400 h-8 w-8 flex items-center justify-center"
+          >
+            {product.qty}</span
+          >
+          <button
+            class="bg-gray-300 border border-gray-400 h-8 rounded-br rounded-tr w-8"
+            on:click={() => addProduct(product)}
+          >
+            +
+          </button>
+        </div>
       </div>
     </li>
     {/each}
@@ -49,5 +80,3 @@
   <h2 class="text-2xl">Total</h2>
   <p>RM {total.toFixed(2)}</p>
 </div>
-
-<pre class="bg-gray-200 p-8">{test}</pre>
