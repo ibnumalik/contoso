@@ -78,5 +78,5 @@
 
 <div class="flex justify-between items-center">
   <h2 class="text-2xl">Total</h2>
-  <p>RM {total.toFixed(2)}</p>
+  <p class="text-2xl font-bold">RM {total.toFixed(2)}</p>
 </div>
