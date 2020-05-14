@@ -2,7 +2,7 @@ import { Product, CartProduct } from 'src/types/Product';
 import { totalize } from './cart';
 import { rounder } from './rounder';
 
-const generalDiscount = 0.05;
+const generalDiscount = 5 / 100;
 
 export function cartTotal(products: Product[]): CartProduct[] {
   let santaTotal = calculateSantaCruz(products);

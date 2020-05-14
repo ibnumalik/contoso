@@ -9,6 +9,8 @@ const others = [
 ];
 const cartA = [...others, ...Array(5).fill(ironhideCartridge)];
 
-test('calculate cart A total', () => {
-  expect(getPriceTotal(cartTotal(cartA))).toBe(5199.16);
+describe('platinum', () => {
+  test('calculate cart A total', () => {
+    expect(getPriceTotal(cartTotal(cartA))).toBe(5199.16);
+  });
 });

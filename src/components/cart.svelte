@@ -8,11 +8,9 @@
   let test;
 
   cart.subscribe((products) => {
-    if (products.length > 0) {
-      productList = combineCartProducts(products, user);
-      total = getPriceTotal(productList);
-      test = JSON.stringify(products, null, 4);
-    }
+    productList = combineCartProducts(products, user);
+    total = getPriceTotal(productList);
+    test = JSON.stringify(products, null, 4);
   });
 </script>
 

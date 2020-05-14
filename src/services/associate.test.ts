@@ -6,8 +6,10 @@ const notSanta = [
   { name: 'Fox + Float', price: 66.0 },
   { name: 'Ironhide', price: 3299.99 },
 ];
-const cartA = [...notSanta, ...Array(3).fill(santa)]
+const cartA = [...notSanta, ...Array(3).fill(santa)];
 
-test('calculate cart total A', () => {
-  expect(getPriceTotal(cartTotal(cartA))).toBe(3568.69);
+describe('associate', () => {
+  test('calculate cart total A', () => {
+    expect(getPriceTotal(cartTotal(cartA))).toBe(3568.69);
+  });
 });
