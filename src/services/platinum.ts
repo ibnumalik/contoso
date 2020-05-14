@@ -9,7 +9,7 @@ import { Product, CartProduct } from 'src/types/Product';
 import { totalize } from './cart';
 import { rounder } from './rounder';
 
-const generalDiscount = 0.15;
+const generalDiscount = 15 / 100;
 const koneDiscountAfterFive = -600;
 const ironhideDiscount = -299.99;
 const ironhideCartridgeSpecialQty = 5;
@@ -53,11 +53,10 @@ function calculateKonePrice(products: Product[]): CartProduct {
     return;
   }
 
-  let konePrice = kone[0].price * (1 - generalDiscount);
-
-  if (koneQty >= 5) {
-    konePrice = konePrice + koneDiscountAfterFive;
-  }
+  let konePrice =
+    koneQty >= 5
+      ? kone[0].price + koneDiscountAfterFive
+      : kone[0].price * (1 - generalDiscount);
 
   return {
     name: kone[0].name,
