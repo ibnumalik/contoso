@@ -3,11 +3,12 @@ import { UserType } from 'src/types/User';
 import { rounder } from './rounder';
 import { cartTotal as associateCartTotal } from './associate';
 import { cartTotal as platinumCartTotal } from './platinum';
+import { cartTotal as diamondCartTotal } from './diamond';
 
 export function combineCartProducts(products: Product[], userType: UserType) {
   switch (userType) {
     case 'diamond':
-      return totalize(products);
+      return diamondCartTotal(products);
 
     case 'platinum':
       return platinumCartTotal(products);
