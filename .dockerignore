@@ -1,0 +1,6 @@
+node_modules
+.scannerwork
+.vscode
+coverage
+e2e
+src
