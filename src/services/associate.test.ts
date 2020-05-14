@@ -1,4 +1,4 @@
-import { combineCartProducts, getPriceTotal } from './cart';
+import { getPriceTotal } from './cart';
 import { cartTotal } from './associate';
 
 const santa = { name: 'SANTA CRUZ', price: 185.5 };
