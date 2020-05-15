@@ -1,5 +1,7 @@
 # Contoso
 
+[Demo](http://ibnumalik-contoso.azurewebsites.net/)
+
 Assessment for Amway.
 
 Install packages
